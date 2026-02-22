@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figure, Details, Time — Примери</title>
+</head>
+<body>
+
+    <header>
+        <h1>Допълнителни семантични елементи</h1>
+        <p>Примери за <code>&lt;figure&gt;</code>, <code>&lt;details&gt;</code>, <code>&lt;time&gt;</code> и <code>&lt;mark&gt;</code></p>
+    </header>
+
+    <main>
+        <!-- FIGURE и FIGCAPTION -->
+        <section>
+            <h2>Figure и Figcaption</h2>
+            <p>Елементът <code>&lt;figure&gt;</code> обгръща самостоятелно съдържание с незадължителен надпис:</p>
+
+            <figure>
+                <img src="https://picsum.photos/600/300" alt="Красив пейзаж">
+                <figcaption>Фиг. 1 — Произволен пейзаж от Unsplash (чрез picsum.photos)</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://picsum.photos/seed/html/400/250" alt="Друга снимка">
+                <figcaption>Фиг. 2 — Снимка с фиксиран seed, за да е винаги еднаква</figcaption>
+            </figure>
+
+            <p><code>&lt;figure&gt;</code> може да съдържа не само снимки, а и код, таблици, диаграми:</p>
+
+            <figure>
+                <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Начало&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;За нас&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                <figcaption>Фиг. 3 — Примерна навигация с <code>&lt;nav&gt;</code></figcaption>
+            </figure>
+        </section>
+
+        <!-- DETAILS и SUMMARY -->
+        <section>
+            <h2>Details и Summary</h2>
+            <p>Сгъваемо съдържание без JavaScript:</p>
+
+            <details>
+                <summary>Какво е HTML5?</summary>
+                <p>HTML5 е петата и текуща основна версия на HTML. Тя въвежда нови семантични елементи, мултимедийни тагове и подобрена поддръжка за форми.</p>
+            </details>
+
+            <details>
+                <summary>Каква е разликата между &lt;section&gt; и &lt;div&gt;?</summary>
+                <p><code>&lt;section&gt;</code> носи семантично значение — тематичен блок от съдържание. <code>&lt;div&gt;</code> е общ контейнер без семантика, подходящ за CSS стилизиране.</p>
+            </details>
+
+            <details open>
+                <summary>Тази секция е отворена по подразбиране (атрибут <code>open</code>)</summary>
+                <p>Когато добавите атрибута <code>open</code> към <code>&lt;details&gt;</code>, съдържанието е видимо от началото. Потребителят може да го затвори при желание.</p>
+            </details>
+        </section>
+
+        <!-- TIME -->
+        <section>
+            <h2>Елементът Time</h2>
+            <p>Семантично обозначаване на дати и часове:</p>
+
+            <div>
+                <p>Публикувано на <time datetime="2025-03-15">15 март 2025</time></p>
+                <p>Събитието е на <time datetime="2025-12-24T18:00">Бъдни вечер, 18:00 часа</time></p>
+                <p>Крайният срок е <time datetime="2026-01-31">31 януари 2026</time></p>
+                <p>Продължителност: <time datetime="PT2H30M">2 часа и 30 минути</time></p>
+            </div>
+        </section>
+
+        <!-- MARK -->
+        <section>
+            <h2>Елементът Mark</h2>
+            <p>За подчертаване на релевантен текст:</p>
+
+            <div>
+                <p>Резултати от търсенето за "семантика":</p>
+                <p>HTML5 въвежда <mark>семантични</mark> елементи, които описват смисъла на съдържанието. <mark>Семантика</mark>та помага за достъпност и SEO.</p>
+            </div>
+        </section>
+
+        <!-- ADDRESS -->
+        <section>
+            <h2>Елементът Address</h2>
+
+            <article>
+                <h3>Статия от Иван Петров</h3>
+                <p>Съдържание на статията...</p>
+                <footer>
+                    <address>
+                        Автор: <a href="mailto:ivan@example.com">Иван Петров</a><br>
+                        Факултет по математика и информатика<br>
+                        бул. Джеймс Баучер 5, София
+                    </address>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ФМИ — Уеб технологии</p>
+    </footer>
+
+</body>
+</html>

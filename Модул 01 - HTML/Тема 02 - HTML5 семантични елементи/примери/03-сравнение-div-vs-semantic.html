@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>div soup vs Семантичен HTML</title>
+</head>
+<body>
+
+<h1>div soup vs Семантичен HTML</h1>
+
+<p><b>Идеята:</b> И двата подхода произвеждат визуално идентичен резултат. Разликата е в <em>значението</em> за машините (търсачки, екранни четци) и <em>четимостта</em> за разработчиците.</p>
+
+<hr>
+
+<!-- ═══════════════════════════════════ -->
+<!--  ПРИМЕР 1 — Навигация              -->
+<!-- ═══════════════════════════════════ -->
+
+<h2>Пример 1 — Навигация</h2>
+
+<table border="1" cellpadding="16" cellspacing="0" width="100%">
+  <tr>
+    <th width="50%">Без семантика — код</th>
+    <th width="50%">Семантичен HTML5 — код</th>
+  </tr>
+  <tr>
+    <td><pre>&lt;div class="navigation"&gt;
+  &lt;div class="nav-list"&gt;
+    &lt;div class="nav-item"&gt;
+      &lt;a href="/"&gt;Начало&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="nav-item"&gt;
+      &lt;a href="/about"&gt;За нас&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="nav-item"&gt;
+      &lt;a href="/contact"&gt;Контакти&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></td>
+    <td><pre>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href="/"&gt;Начало&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="/about"&gt;За нас&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="/contact"&gt;Контакти&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre></td>
+  </tr>
+  <tr>
+    <th>Без семантика — визуализация</th>
+    <th>Семантичен HTML5 — визуализация</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="navigation">
+        <div class="nav-list">
+          <div class="nav-item"><a href="#">Начало</a></div>
+          <div class="nav-item"><a href="#">За нас</a></div>
+          <div class="nav-item"><a href="#">Контакти</a></div>
+        </div>
+      </div>
+    </td>
+    <td>
+      <nav>
+        <ul>
+          <li><a href="#">Начало</a></li>
+          <li><a href="#">За нас</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+      </nav>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<!-- ═══════════════════════════════════ -->
+<!--  ПРИМЕР 2 — Статия                 -->
+<!-- ═══════════════════════════════════ -->
+
+<h2>Пример 2 — Статия с автор и дата</h2>
+
+<table border="1" cellpadding="16" cellspacing="0" width="100%">
+  <tr>
+    <th width="50%">Без семантика — код</th>
+    <th width="50%">Семантичен HTML5 — код</th>
+  </tr>
+  <tr>
+    <td><pre>&lt;div class="article"&gt;
+  &lt;div class="article-header"&gt;
+    &lt;div class="title"&gt;Заглавие&lt;/div&gt;
+    &lt;div class="date"&gt;15.03.2025&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="content"&gt;
+    &lt;div&gt;Текст на статия...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="article-footer"&gt;
+    &lt;div&gt;Автор: Иван&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></td>
+    <td><pre>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h2&gt;Заглавие&lt;/h2&gt;
+    &lt;time datetime="2025-03-15"&gt;
+      15.03.2025
+    &lt;/time&gt;
+  &lt;/header&gt;
+  &lt;p&gt;Текст на статия...&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;address&gt;Автор: Иван&lt;/address&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</pre></td>
+  </tr>
+  <tr>
+    <th>Без семантика — визуализация</th>
+    <th>Семантичен HTML5 — визуализация</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="article">
+        <div class="article-header">
+          <div class="title"><b>Заглавие</b></div>
+          <div class="date">15.03.2025</div>
+        </div>
+        <div class="content">
+          <div>Текст на статия...</div>
+        </div>
+        <div class="article-footer">
+          <div>Автор: Иван</div>
+        </div>
+      </div>
+    </td>
+    <td>
+      <article>
+        <header>
+          <h2>Заглавие</h2>
+          <time datetime="2025-03-15">15.03.2025</time>
+        </header>
+        <p>Текст на статия...</p>
+        <footer>
+          <address>Автор: Иван</address>
+        </footer>
+      </article>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<!-- ═══════════════════════════════════ -->
+<!--  ПРИМЕР 3 — Цяла страница          -->
+<!-- ═══════════════════════════════════ -->
+
+<h2>Пример 3 — Цяла страница</h2>
+
+<table border="1" cellpadding="16" cellspacing="0" width="100%">
+  <tr>
+    <th width="50%">"div soup" — код</th>
+    <th width="50%">Семантичен HTML5 — код</th>
+  </tr>
+  <tr>
+    <td><pre>&lt;div id="header"&gt;...&lt;/div&gt;
+&lt;div id="nav"&gt;...&lt;/div&gt;
+&lt;div id="main"&gt;
+  &lt;div class="section"&gt;
+    &lt;div class="post"&gt;...&lt;/div&gt;
+    &lt;div class="post"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="sidebar"&gt;...&lt;/div&gt;
+&lt;div id="footer"&gt;...&lt;/div&gt;</pre></td>
+    <td><pre>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;article&gt;...&lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;aside&gt;...&lt;/aside&gt;
+&lt;footer&gt;...&lt;/footer&gt;</pre></td>
+  </tr>
+  <tr>
+    <th>"div soup" — визуализация</th>
+    <th>Семантичен HTML5 — визуализация</th>
+  </tr>
+  <tr>
+    <td>
+      <div id="header"><b>[header]</b> Лого и заглавие</div>
+      <div id="nav"><b>[nav]</b> Начало | За нас | Контакти</div>
+      <div id="main">
+        <div class="section">
+          <div class="post"><b>[post]</b> Статия 1</div>
+          <br>
+          <div class="post"><b>[post]</b> Статия 2</div>
+        </div>
+      </div>
+      <div id="sidebar"><b>[sidebar]</b> Странична лента</div>
+      <div id="footer"><b>[footer]</b> &copy; 2025</div>
+    </td>
+    <td>
+      <header><b>&lt;header&gt;</b> Лого и заглавие</header>
+      <nav><b>&lt;nav&gt;</b> <a href="#">Начало</a> | <a href="#">За нас</a> | <a href="#">Контакти</a></nav>
+      <main>
+        <section>
+          <article><b>&lt;article&gt;</b> Статия 1</article>
+          <br>
+          <article><b>&lt;article&gt;</b> Статия 2</article>
+        </section>
+      </main>
+      <aside><b>&lt;aside&gt;</b> Странична лента</aside>
+      <footer><b>&lt;footer&gt;</b> &copy; 2025</footer>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<p><b>Заключение:</b> Семантичният HTML е по-кратък, по-четим и носи смисъл. Търсачките и помощните технологии разчитат на него, за да разберат структурата на страницата.</p>
+
+</body>
+</html>
